@@ -39,12 +39,17 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            float result = Float.parseFloat(m) / 30.9f;
+
+            float result_us = Float.parseFloat(m) / 30.9f;
+            float result_jp = Float.parseFloat(m) / 0.2849f;
+            us.setText(Float.toString(result_us));
+            jp.setText(Float.toString(result_jp));
             new AlertDialog.Builder(this)
                     .setTitle(R.string.result)
-                    .setMessage(getString(R.string.usd_id) + result)
+                    .setMessage(getString(R.string.usd_id) + result_us)
                     .setPositiveButton(R.string.ok, null)
                     .show();
+
 
         }
     }
